@@ -12,27 +12,46 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class Calculator {
     private static final Logger log = getLogger(Calculator.class);
 
+    private double result = 0d;
+
+    public void setResult(double result) {
+        this.result = result;
+    }
+
     public double getResult() {
-        throw new UnsupportedOperationException();
+        return this.result;
+        //throw new UnsupportedOperationException();
     }
 
     public void add(double first, double second) {
-        throw new UnsupportedOperationException();
+        setResult(first + second);
+        //throw new UnsupportedOperationException();
     }
 
     public void substract(double first, double second) {
-        throw new UnsupportedOperationException();
+        setResult(first - second);
+        //throw new UnsupportedOperationException();
     }
 
     public void multiple(double first, double second) {
-        throw new UnsupportedOperationException();
+        setResult(first * second);
+        //throw new UnsupportedOperationException();
     }
 
     public void div(double first, double second) {
-        throw new UnsupportedOperationException();
+        if(first == 0d || second == 0d){
+            throw new IllegalStateException();
+        }
+        setResult(first / second);
+        //throw new UnsupportedOperationException();
     }
 
     public void expand(double first, double second) {
-        throw new UnsupportedOperationException();
+        double res = 0d;
+        for (int i = 1; i <= second; i++) {
+            res = first * first;
+        }
+        setResult(res);
+        //throw new UnsupportedOperationException();
     }
 }
